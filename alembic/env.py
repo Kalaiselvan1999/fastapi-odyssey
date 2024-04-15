@@ -16,8 +16,9 @@ if config.config_file_name is not None:
 
 # add your model's MetaData object here
 # for 'autogenerate' support
-from models import Base
-target_metadata = Base.metadata
+from auth.models import Base as auth_models
+from odyssey.models import Base as odyssey_models
+target_metadata = [auth_models.metadata, odyssey_models.metadata]
 # target_metadata = None
 
 # other values from the config, defined by the needs of env.py,
